@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="InetBankingV1">
+
+	<listeners>
+		<listener class-name="com.inetbanking.utilities.Reporting"/>
+	</listeners>
+
+	<test name="BankingApp Test">
+		<parameter name="browser" value="chrome" />
+		<classes>
+			<class name="com.selEasy.testCases.Intermediate.Progress_Bar" />
+			<class name="com.selEasy.testCases.Intermediate.Data_list_filter" />
+			<class name="com.selEasy.testCases.Intermediate.Input_Form_with_validation" />
+			<class name="com.inetbanking.testCases.Basic.BootStrap_Modal" />
+			<class name="com.inetbanking.testCases.Basic.Check_Box_Demo" />
+			<class name="com.inetbanking.testCases.Basic.Java_Scritps_Alerts" />
+			<class name="com.inetbanking.testCases.Basic.Bootstrap_Alerts" />
+			<class name="com.inetbanking.testCases.Basic.Radio_Button_Demo" />
+			<class name="com.inetbanking.testCases.Basic.Select_Drop_Down" />
+			<class name="com.inetbanking.testCases.Basic.Simple_Form_Demo" />
+			<class name="com.inetbanking.testCases.Basic.WindowsPopup" />
+		</classes>
+
+	</test>
+
+</suite>
