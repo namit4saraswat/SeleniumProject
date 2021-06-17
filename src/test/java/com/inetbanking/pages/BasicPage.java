@@ -21,13 +21,22 @@ import com.inetbanking.utilities.BaseClass;
 
 public class BasicPage extends BaseClass {
 	
+	
+	
+	WebDriver ldriver;
+	
+	public BasicPage(WebDriver rdriver) {
+		ldriver=rdriver;
+		PageFactory.initElements(rdriver, this);
+	}
+
 	Actions action = new Actions(driver);
 	WebDriverWait wait=new WebDriverWait(driver, 20);
 	
 	//***************Element List Start ******************//
 	
 	//********Home Page**********//
-	WebDriver ldriver;
+	
 	@FindBy(xpath="//*[contains(@class, 'two')]//*[contains(@class, 'glyphicon')]")
 	WebElement btnDownArrow;
 	
@@ -162,10 +171,7 @@ public class BasicPage extends BaseClass {
 	
 	//***************Element List End ******************//
 	
-	public BasicPage(WebDriver rdriver){
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
-	}
+	
 	
 	//Method to Launch Test Site
 	public void fnLaunchTestSite() {

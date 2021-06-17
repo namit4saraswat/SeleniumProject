@@ -15,6 +15,8 @@ import org.testng.annotations.Parameters;
 
 public class BaseClass {
 	
+	
+	
 	ReadConfig readConfig = new ReadConfig();
 	public String url= readConfig.getSiteURL();
 	public static WebDriver driver;
