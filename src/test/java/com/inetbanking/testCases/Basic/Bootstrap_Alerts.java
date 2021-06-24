@@ -1,5 +1,7 @@
 package com.inetbanking.testCases.Basic;
 
+import java.io.IOException;
+
 import org.testng.annotations.Test;
 
 import com.inetbanking.pages.BasicPage;
@@ -8,7 +10,7 @@ import com.inetbanking.utilities.BaseClass;
 public class Bootstrap_Alerts extends BaseClass {
 	
 	@Test
-	public void test()
+	public void test()  
 	{
 		BasicPage Step1 = new BasicPage(driver);
 		logger.info("Launching test site");

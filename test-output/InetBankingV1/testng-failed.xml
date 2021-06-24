@@ -7,27 +7,13 @@
   <test thread-count="5" name="BankingApp Test(failed)">
     <parameter name="browser" value="chrome"/>
     <classes>
-      <class name="com.inetbanking.testCases.Basic.Simple_Form_Demo">
-        <methods>
-          <include name="test"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.inetbanking.testCases.Basic.Simple_Form_Demo -->
-      <class name="com.inetbanking.testCases.Basic.Check_Box_Demo">
-        <methods>
-          <include name="test"/>
-          <include name="setup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- com.inetbanking.testCases.Basic.Check_Box_Demo -->
-      <class name="com.inetbanking.testCases.Basic.Select_Drop_Down">
+      <class name="com.inetbanking.testCases.Basic.Bootstrap_Alerts">
         <methods>
           <include name="setup"/>
           <include name="test"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.inetbanking.testCases.Basic.Select_Drop_Down -->
+      </class> <!-- com.inetbanking.testCases.Basic.Bootstrap_Alerts -->
     </classes>
   </test> <!-- BankingApp Test(failed) -->
 </suite> <!-- Failed suite [InetBankingV1] -->

@@ -2,6 +2,7 @@ package com.inetbanking.pages;
 
 
 
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -17,6 +18,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.inetbanking.utilities.BaseClass;
+import com.inetbanking.utilities.HighLightElement;
+import com.inetbanking.utilities.ScreenShot;
 
 
 public class BasicPage extends BaseClass {
@@ -174,16 +177,18 @@ public class BasicPage extends BaseClass {
 	
 	
 	//Method to Launch Test Site
-	public void fnLaunchTestSite() {
+	public void fnLaunchTestSite()   {
 		driver.get(url);
+		ScreenShot.fnTakeScreenshot(driver);
 	}
 	
 	//Method to validate the Launch
-	public void fnValidateLaunch() {
+	public void fnValidateLaunch()   {
 		
 		if (driver.getTitle().contains("Selenium Easy"))
 		{
 			Assert.assertTrue(true);
+			ScreenShot.fnTakeScreenshot(driver);
 		}
 		else
 		{
@@ -192,11 +197,14 @@ public class BasicPage extends BaseClass {
 	}
 	
 	//CLosing the pop up
-	public void fnClosePopup() {
+	public void fnClosePopup()   {
 		wait.until(ExpectedConditions.visibilityOf(btnClosePopUp));
+		HighLightElement.fnHighlightElement(driver, btnClosePopUp);
 		if (btnClosePopUp.isDisplayed()) {
 			btnClosePopUp.click();
 		Assert.assertTrue(btnDownArrow.isDisplayed(), "Pop is closed");
+		ScreenShot.fnTakeScreenshot(driver);
+		
 		}
 	}
 	
@@ -426,10 +434,12 @@ public class BasicPage extends BaseClass {
 	
 	public void fnBootstrapModal() {
 		wait.until(ExpectedConditions.visibilityOf(btnDownArrow));
+		HighLightElement.fnHighlightElement(driver, btnDownArrow);
 		action.moveToElement(btnDownArrow);
 		btnDownArrow.click();
 		action.moveToElement(lblBootStrapModal);
 		wait.until(ExpectedConditions.visibilityOf(lblBootStrapModal));
+		HighLightElement.fnHighlightElement(driver, lblBootStrapModal);
 		Assert.assertTrue(lblBootStrapModal.isDisplayed(), "Verify if Modal Demo label is displayed");
 		logger.info("Down arrow button is clicked");
 		lblBootStrapModal.click();
