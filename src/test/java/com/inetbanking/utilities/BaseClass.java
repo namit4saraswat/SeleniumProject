@@ -2,8 +2,11 @@ package com.inetbanking.utilities;
 
 
 
+import java.util.HashMap;
+
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -12,7 +15,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-public class BaseClass {
+public abstract class BaseClass {
 	
 	
 	
@@ -21,12 +24,17 @@ public class BaseClass {
 	public static WebDriver driver;
 	public static Logger logger;
 	
-	/* work on it
-	 * HashMap<String, By> elements = new HashMap<String, By>();
-	 * 
-	 * public void element(String name, By property) {
-	 * elements.put(name.toLowerCase(), property); }
-	 */
+	
+	HashMap<String, WebElement> elements = new HashMap<String, WebElement>();
+	public void element(String name,WebElement ele )
+    {
+    	elements.put(name.toLowerCase(), ele);
+    }
+	
+	public WebElement element(String name) {
+		return elements.get(name);
+	}
+	 
 	
 	@Parameters("browser")
 	@BeforeClass

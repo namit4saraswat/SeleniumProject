@@ -20,28 +20,28 @@ import org.testng.Assert;
 import com.inetbanking.utilities.BaseClass;
 import com.inetbanking.utilities.HighLightElement;
 import com.inetbanking.utilities.ScreenShot;
+import com.inetbanking.utilities.WrappedWebElement;
 
 
 public class BasicPage extends BaseClass {
 	
-	
-	
 	WebDriver ldriver;
+	Actions action = new Actions(driver);
+	WebDriverWait wait=new WebDriverWait(driver, 20);
 	
 	public BasicPage(WebDriver rdriver) {
 		ldriver=rdriver;
 		PageFactory.initElements(rdriver, this);
 	}
 
-	Actions action = new Actions(driver);
-	WebDriverWait wait=new WebDriverWait(driver, 20);
+	
 	
 	//***************Element List Start ******************//
 	
 	//********Home Page**********//
-	
 	@FindBy(xpath="//*[contains(@class, 'two')]//*[contains(@class, 'glyphicon')]")
 	WebElement btnDownArrow;
+	
 	
 	//********Simple Form**********//
 	@FindBy(xpath="//div[@class='list-group']//a[text()='Input Form with Validations']")
@@ -159,7 +159,7 @@ public class BasicPage extends BaseClass {
 	
 	//******Bootstrap Modal******//
 	@FindBy(xpath="//div[@class='list-group']//a[text()='Bootstrap Modals']")
-	WebElement lblBootStrapModal;
+	WrappedWebElement lblBootStrapModal;
 	@FindBy(xpath="//a[@href='#myModal0']")
 	WebElement btnSingleModal;
 	@FindBy(xpath="//a[@href='#myModal']")
@@ -170,10 +170,25 @@ public class BasicPage extends BaseClass {
 	WebElement btnlaunchModal;
 	@FindBy(xpath="//*[@id='myModal2']//a[text()='Save changes']")
 	WebElement btnSaveChanges2;
+	@FindBy(xpath="//*[@id='myModal2']//a[text()='Save changes']")
+	WrappedWebElement btnSaveChanges5;
 	
 	
 	//***************Element List End ******************//
 	
+	public void fnFillHashMap() {
+		element("btnDownArrow", btnDownArrow);
+		element("btnDownArrow", btnDownArrow);
+		element("btnDownArrow", btnDownArrow);
+		element("btnDownArrow", btnDownArrow);
+		element("btnDownArrow", btnDownArrow);
+		
+		
+	}
+	
+	public void TestMethod() {
+		btnSaveChanges5.click();
+	}
 	
 	
 	//Method to Launch Test Site

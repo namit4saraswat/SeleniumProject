@@ -29,6 +29,7 @@ public class Reporting extends TestListenerAdapter{
 		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
 		String repname = "Test-Report" + timeStamp + ".html";
 		
+		
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") + "/test-output/Reports/" + repname);
 		htmlReporter.loadXMLConfig(System.getProperty("user.dir") + "/extent-config.xml");
 		
@@ -49,7 +50,7 @@ public class Reporting extends TestListenerAdapter{
 	{
 		logger= extent.createTest(tr.getName());
 		logger.log(Status.PASS, MarkupHelper.createLabel(tr.getName(), ExtentColor.GREEN));
-		String screenshotpath = System.getProperty("user.dir") + "\\Screenshots" + tr.getName() + ".png";
+		String screenshotpath = System.getProperty("user.dir") + "\\Screenshots\\" + tr.getName() + ".png";
 		File f = new File(screenshotpath);
 		
 		if (f.exists()) {

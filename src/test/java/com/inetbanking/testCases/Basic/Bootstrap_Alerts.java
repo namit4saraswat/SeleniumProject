@@ -19,7 +19,5 @@ public class Bootstrap_Alerts extends BaseClass {
 		Step1.fnValidateLaunch();
 		logger.info("Close pop up");
 		Step1.fnClosePopup();
-		
-		
 	}
 }
