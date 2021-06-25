@@ -10,7 +10,7 @@
 	<test name="BankingApp Test">
 		<parameter name="browser" value="chrome" />
 		<classes>
-			<class name="com.inetbanking.testCases.Basic.BootStrap_Modal" />
+			<class name="com.inetbanking.testCases.Basic.Select_Drop_Down" />
 		</classes>
 
 	</test>
